@@ -104,7 +104,7 @@ func (p *Manager) GetParameters() Parameters {
 
 func (p *Manager) Init() error {
 	name := filepath.Join(p.pgBinPath, "initdb")
-	out, err := exec.Command(name, "-D", p.dataDir, "-U", p.suUsername).CombinedOutput()
+	out, err := exec.Command(name, "-E", "UTF8", "-D", p.dataDir, "-U", p.suUsername).CombinedOutput()
 	if err != nil {
 		err = fmt.Errorf("error: %v, output: %s", err, out)
 		goto out
