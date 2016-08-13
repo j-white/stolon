@@ -29,7 +29,7 @@ const (
 	DefaultKeeperFailInterval      = 20 * time.Second
 	DefaultMaxStandbysPerSender    = 3
 	DefaultSynchronousReplication  = false
-	DefaultInitWithMultipleKeepers = false
+	DefaultInitWithMultipleKeepers = true
 	DefaultUsePGRewind             = false
 )
 
