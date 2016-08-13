@@ -94,7 +94,8 @@ func (s *Sentinel) electionLoop() {
 		log.Infof("Trying to acquire sentinels leadership")
 		electedCh, errCh, err := s.candidate.RunForElection()
 		if err != nil {
-			return
+			log.Errorf("failed to run for election: %v", err)
+			goto end
 		}
 		for {
 			select {
